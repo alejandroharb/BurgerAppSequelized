@@ -3,8 +3,6 @@ var db = require('../models');
 module.exports = function (app) {
     app.get('/', function (req, res) {
         db.Burger.findAll().then(function (data) {
-            console.log("===========table data============");
-            console.log(data)
             var obj = {burgers: data}
             console.log(obj);
             res.render('index', obj)
